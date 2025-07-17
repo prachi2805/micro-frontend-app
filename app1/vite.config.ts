@@ -1,26 +1,31 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import federation from '@originjs/vite-plugin-federation'
+// filepath: micro-frontend-app/app1/vite.config.ts
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import federation from "@originjs/vite-plugin-federation";
 
 export default defineConfig({
   plugins: [
     react(),
     federation({
-      name: 'app1',
-      filename: 'remoteEntry.js',
+      name: "app1",
+      filename: "remoteEntry.js",
       exposes: {
-        './App': './src/App.tsx',
+        "./App": "./src/App",
       },
-      shared: ['react', 'react-dom', 'react-router-dom']
-    })
+      shared: ["react", "react-dom", "react-router-dom"],
+    }),
   ],
-  build: {
-    modulePreload: false,
-    target: 'esnext',
-    minify: false,
-    cssCodeSplit: false
+  preview: {
+    port: 3001,
+    strictPort: true,
   },
   server: {
-    port: 3001
-  }
-})
+    port: 3001,
+    strictPort: true,
+  },
+  build: {
+    target: "esnext",
+    minify: false,
+    cssCodeSplit: false,
+  },
+});

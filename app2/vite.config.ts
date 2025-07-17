@@ -9,18 +9,22 @@ export default defineConfig({
       name: "app2",
       filename: "remoteEntry.js",
       exposes: {
-        "./App": "./src/App.tsx",
+        "./App": "./src/App",
       },
       shared: ["react", "react-dom", "react-router-dom"],
     }),
   ],
-  build: {
-    modulePreload: false,
-    target: "esnext",
-    minify: false,
-    cssCodeSplit: false,
+  preview: {
+    port: 3002,
+    strictPort: true,
   },
   server: {
     port: 3002,
+    strictPort: true,
+  },
+  build: {
+    target: "esnext",
+    minify: false,
+    cssCodeSplit: false,
   },
 });

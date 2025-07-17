@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [
     react(),
     federation({
-      name: "main-app",
+      name: "container",
       remotes: {
         app1: "http://localhost:3001/assets/remoteEntry.js",
         app2: "http://localhost:3002/assets/remoteEntry.js",
@@ -14,13 +14,17 @@ export default defineConfig({
       shared: ["react", "react-dom", "react-router-dom"],
     }),
   ],
-  build: {
-    modulePreload: false,
-    target: "esnext",
-    minify: false,
-    cssCodeSplit: false,
+  preview: {
+    port: 3000,
+    strictPort: true,
   },
   server: {
     port: 3000,
+    strictPort: true,
+  },
+  build: {
+    target: "esnext",
+    minify: false,
+    cssCodeSplit: false,
   },
 });

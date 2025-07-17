@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; 2024 Micro Frontend App. All rights reserved.</p>
+          <p>&copy; 2025 Micro Frontend App. All rights reserved.</p>
         </div>
       </div>
     </footer>

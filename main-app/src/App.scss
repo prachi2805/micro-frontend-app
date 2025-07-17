@@ -30,6 +30,7 @@ body {
   flex: 1;
   padding: 20px;
   transition: margin-left 0.3s ease;
+  color: #111827;
 
   &.sidebar-open {
     margin-left: 280px;

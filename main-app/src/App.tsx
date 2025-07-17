@@ -1,35 +1,48 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { Suspense, useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Sidebar from "./components/Sidebar";
+import Home from "./pages/Home";
+import "./App.scss";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App1 = React.lazy(() => import("app1/App"));
+const App2 = React.lazy(() => import("app2/App"));
+
+const App: React.FC = () => {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
+
+  const closeSidebar = () => {
+    setSidebarOpen(false);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <Router>
+      <div className="app">
+        <Header onMenuToggle={toggleSidebar} />
 
-export default App
+        <div className="app-body">
+          <Sidebar isOpen={sidebarOpen} onClose={closeSidebar} />
+
+          <main className={`main-content ${sidebarOpen ? "sidebar-open" : ""}`}>
+            <Suspense fallback={<div className="loading">Loading...</div>}>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/app1/*" element={<App1 />} />
+                <Route path="/app2/*" element={<App2 />} />
+              </Routes>
+            </Suspense>
+          </main>
+        </div>
+
+        <Footer />
+      </div>
+    </Router>
+  );
+};
+
+export default App;

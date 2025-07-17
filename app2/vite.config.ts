@@ -6,10 +6,10 @@ export default defineConfig({
   plugins: [
     react(),
     federation({
-      name: "main-app",
-      remotes: {
-        app1: "http://localhost:3001/assets/remoteEntry.js",
-        app2: "http://localhost:3002/assets/remoteEntry.js",
+      name: "app2",
+      filename: "remoteEntry.js",
+      exposes: {
+        "./App": "./src/App.tsx",
       },
       shared: ["react", "react-dom", "react-router-dom"],
     }),
@@ -21,6 +21,6 @@ export default defineConfig({
     cssCodeSplit: false,
   },
   server: {
-    port: 3000,
+    port: 3002,
   },
 });

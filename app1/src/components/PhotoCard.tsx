@@ -1,6 +1,6 @@
 import React from "react";
 import { Heart, Star, ShoppingCart } from "lucide-react";
-import { Photo } from "../types";
+import { type Photo } from "../types";
 
 interface PhotoCardProps {
   photo: Photo;

@@ -45,16 +45,11 @@ export interface Photo {
 }
 
 export interface AppState {
-  // Photos data
   photos: Photo[];
   currentPage: number;
   loading: boolean;
   hasMore: boolean;
-
-  // Favorites
   favorites: Photo[];
-
-  // Actions
   loadPhotos: (page?: number, reset?: boolean) => Promise<void>;
   toggleFavorite: (photo: Photo) => void;
   isFavorite: (photoId: number) => boolean;

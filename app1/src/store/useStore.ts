@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { Photo, AppState } from "../types";
+import { type Photo, type AppState } from "../types";
 
 // Interface for the API response structure
 interface ApiResponse {
@@ -22,7 +22,7 @@ const useStore = create<AppState>((set, get) => ({
     const { loading, hasMore } = get();
 
     if (loading || (!hasMore && !reset)) {
-      console.log('Skipping load:', { loading, hasMore, reset });
+      console.log("Skipping load:", { loading, hasMore, reset });
       return;
     }
 
@@ -32,17 +32,17 @@ const useStore = create<AppState>((set, get) => ({
     try {
       const url = `https://dummyjson.com/products?page=${page}&limit=10`;
       console.log("Fetching URL:", url);
-      
+
       const response = await fetch(url);
       console.log("Response status:", response.status);
-      
+
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-      
+
       const data: ApiResponse = await response.json();
       console.log("API Response:", data);
-      
+
       // Extract products array from the response
       const newPhotos: Photo[] = data.products || [];
       console.log("New photos:", newPhotos.length);
@@ -54,7 +54,9 @@ const useStore = create<AppState>((set, get) => ({
       }
 
       set((state) => {
-        const updatedPhotos = reset ? newPhotos : [...state.photos, ...newPhotos];
+        const updatedPhotos = reset
+          ? newPhotos
+          : [...state.photos, ...newPhotos];
         console.log("Updated photos count:", updatedPhotos.length);
         return {
           photos: updatedPhotos,

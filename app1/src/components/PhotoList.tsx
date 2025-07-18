@@ -17,7 +17,6 @@ const PhotoList: React.FC = () => {
     isFavorite,
   } = useStore();
 
-
   useEffect(() => {
     console.log("PhotoList useEffect:", {
       photosLength: photos?.length,
@@ -27,7 +26,7 @@ const PhotoList: React.FC = () => {
       console.log("Loading initial photos...");
       loadPhotos(1, true);
     }
-  }, [loadPhotos]); 
+  }, [loadPhotos]);
 
   // Handle infinite scroll
   const handleLoadMore = () => {
@@ -46,9 +45,9 @@ const PhotoList: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 p-6">
-      <div className="max-w-7xl mx-auto relative">
+      <div className="max-w-8xl mx-auto relative">
         {/* Header with Back Button */}
-        <div className=" sticky inset-x-0 top-0 z-10 bg-gray-50 flex flex-col md:flex-row items-center justify-between gap-4 mb-8 py-4">
+        <div className=" sticky inset-x-0 top-0 z-10 bg-gray-50 flex flex-col md:flex-row items-center justify-between gap-4 !mb-8 py-4">
           <h1 className="text-3xl font-bold text-gray-900 text-center md:text-left">
             Product Gallery
           </h1>

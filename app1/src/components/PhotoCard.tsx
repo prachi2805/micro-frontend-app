@@ -38,19 +38,19 @@ const PhotoCard: React.FC<PhotoCardProps> = ({
       {/* Content */}
       <div className="p-4">
         {/* Title and Brand */}
-        <div className="mb-2">
+        <div className="!mb-2">
           <h3 className="text-lg font-semibold text-gray-900 line-clamp-2">
             {photo.id}. {photo.title}
           </h3>
         </div>
 
         {/* Description */}
-        <p className="text-gray-600 text-sm mb-3 line-clamp-2">
+        <p className="text-gray-600 text-sm !mb-3 line-clamp-2">
           {photo.description}
         </p>
 
         {/* Price and Rating */}
-        <div className="flex items-center justify-between mb-3">
+        <div className="flex items-center justify-between !mb-3">
           <div className="flex items-center gap-2">
             <span className="text-xl font-bold text-gray-900">
               ${photo.price}

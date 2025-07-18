@@ -36,7 +36,7 @@ const PhotoCard: React.FC<PhotoCardProps> = ({
       </div>
 
       {/* Content */}
-      <div className="p-4">
+      <div className="!p-4">
         {/* Title and Brand */}
         <div className="!mb-2">
           <h3 className="text-lg font-semibold text-gray-900 line-clamp-2">

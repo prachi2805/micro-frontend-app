@@ -8,7 +8,7 @@ const Dashboard: React.FC = () => {
   const favorites = useStore((state) => state.favorites);
 
   return (
-    <div className="min-h-screen bg-gray-50 p-6">
+    <div className="min-h-screen bg-gray-50 !p-6">
       <div className="max-w-8xl mx-auto">
         <h1 className="text-3xl font-bold text-gray-900 !mb-8">Dashboard</h1>
 
@@ -37,7 +37,7 @@ const Dashboard: React.FC = () => {
               {favorites.map((photo) => (
                 <div
                   key={photo.id}
-                  className="bg-gray-50 rounded-lg p-4 border"
+                  className="bg-gray-50 rounded-lg !p-4 border"
                 >
                   <img
                     src={photo.images[0]}

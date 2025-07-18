@@ -33,7 +33,7 @@ const Header: React.FC<HeaderProps> = ({ onMenuToggle }) => {
 
           <div className="user-menu">
             <div className="user-avatar">
-              <span>JD</span>
+              <span>PA</span>
             </div>
           </div>
         </div>

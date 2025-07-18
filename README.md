@@ -14,7 +14,7 @@ React micro-frontend setup using Vite and Module Federation.
 
 ### Prerequisites
 
-- Node.js v20.18.0
+- Node.js v20.19.0
 
 ### Installation
 
@@ -33,3 +33,9 @@ cd main-app && npm run dev
 ```
 
 ## 🚀 Live Demo
+
+![Main Page](s0.png)
+![Side Bar](screenshots/s2.png)
+![Product Gallery](screenshots/s1.png)
+![Dashboard](screenshots/s3.png)
+![App 2](screenshots/s4.png)

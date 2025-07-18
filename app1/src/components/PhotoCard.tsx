@@ -19,15 +19,18 @@ const PhotoCard: React.FC<PhotoCardProps> = ({
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
       {/* Image */}
-      <div className="relative aspect-square">
+      <div
+        className="flex justify-center items-center bg-gray-100"
+        style={{ height: "160px" }}
+      >
         <img
           src={imageUrl}
           alt={photo.title}
-          className="w-full h-full object-cover"
+          className="object-cover rounded-md"
+          style={{ maxHeight: "140px", maxWidth: "140px" }}
           onError={(e) => {
-            // Fallback for broken images
             const target = e.target as HTMLImageElement;
-            target.src = "https://via.placeholder.com/300x300?text=No+Image";
+            target.src = "https://via.placeholder.com/140x140?text=No+Image";
           }}
         />
       </div>

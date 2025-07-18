@@ -49,9 +49,12 @@ const PhotoList: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 p-6">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto relative">
         {/* Header with Back Button */}
-        <div className="flex items-center gap-4 mb-8">
+        <div className=" sticky inset-x-0 top-0 z-10 bg-gray-50 flex flex-col md:flex-row items-center justify-between gap-4 mb-8 py-4">
+          <h1 className="text-3xl font-bold text-gray-900 text-center md:text-left">
+            Product Gallery
+          </h1>
           <button
             onClick={() => navigate("/app1")}
             className="flex items-center gap-2 bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-lg transition-colors"
@@ -59,11 +62,10 @@ const PhotoList: React.FC = () => {
             <ArrowLeft size={20} />
             Back to Dashboard
           </button>
-          <h1 className="text-3xl font-bold text-gray-900">Product Gallery</h1>
         </div>
 
         {/* Photo Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
           {Array.isArray(photos) && photos.length > 0
             ? photos.map((photo) => {
                 console.log("Rendering photo:", photo.id, photo.title);

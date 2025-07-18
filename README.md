@@ -34,8 +34,8 @@ cd main-app && npm run dev
 
 ## 🚀 Live Demo
 
-![Main Page](s0.png)
-![Side Bar](screenshots/s2.png)
-![Product Gallery](screenshots/s1.png)
-![Dashboard](screenshots/s3.png)
-![App 2](screenshots/s4.png)
+![Main Page](screenshots/ss0.png)
+![Side Bar](screenshots/ss1.png)
+![Product Gallery](screenshots/ss2.png)
+![Dashboard](screenshots/ss3.png)
+![App 2](screenshots/ss4.png)

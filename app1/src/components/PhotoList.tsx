@@ -17,10 +17,7 @@ const PhotoList: React.FC = () => {
     isFavorite,
   } = useStore();
 
-  // Debug log to see what's happening
-  console.log("PhotoList render:", { photos, loading, hasMore, currentPage });
 
-  // Load initial photos when component mounts
   useEffect(() => {
     console.log("PhotoList useEffect:", {
       photosLength: photos?.length,
@@ -30,7 +27,7 @@ const PhotoList: React.FC = () => {
       console.log("Loading initial photos...");
       loadPhotos(1, true);
     }
-  }, [loadPhotos]); // Remove photos.length dependency to avoid infinite loops
+  }, [loadPhotos]); 
 
   // Handle infinite scroll
   const handleLoadMore = () => {

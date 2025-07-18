@@ -34,7 +34,6 @@ const useStore = create<AppState>((set, get) => ({
       console.log("Fetching URL:", url);
 
       const response = await fetch(url);
-      console.log("Response status:", response.status);
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);

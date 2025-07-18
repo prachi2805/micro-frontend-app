@@ -27,31 +27,16 @@ const Footer: React.FC = () => {
           </div>
 
           <div className="footer-section">
-            <h4>Resources</h4>
-            <ul>
-              <li>
-                <a href="/docs">Documentation</a>
-              </li>
-              <li>
-                <a href="/support">Support</a>
-              </li>
-              <li>
-                <a href="/api">API</a>
-              </li>
-            </ul>
-          </div>
-
-          <div className="footer-section">
             <h4>Connect</h4>
             <ul>
               <li>
-                <a href="https://github.com">GitHub</a>
+                <a href="https://github.com/prachi2805">GitHub</a>
               </li>
               <li>
-                <a href="https://twitter.com">Twitter</a>
+                <a href="mailto:prachiarora0501@gmail.com">Gmail</a>
               </li>
               <li>
-                <a href="https://linkedin.com">LinkedIn</a>
+                <a href="https://linkedin.com/prachiarora5">LinkedIn</a>
               </li>
             </ul>
           </div>

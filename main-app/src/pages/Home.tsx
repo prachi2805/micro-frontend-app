@@ -39,12 +39,6 @@ const Home: React.FC = () => {
               capabilities
             </p>
           </div>
-
-          <div className="feature-card">
-            <div className="feature-icon">🔧</div>
-            <h3>Modular</h3>
-            <p>Each application can be developed and deployed independently</p>
-          </div>
         </div>
       </div>
     </div>

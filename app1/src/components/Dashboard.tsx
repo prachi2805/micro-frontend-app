@@ -10,7 +10,7 @@ const Dashboard: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50 p-6">
       <div className="max-w-8xl mx-auto">
-        <h1 className="text-3xl font-bold text-gray-900 !!mb-8">Dashboard</h1>
+        <h1 className="text-3xl font-bold text-gray-900 !mb-8">Dashboard</h1>
 
         {/* Navigation Button */}
         <div className="!mb-8">
@@ -25,7 +25,7 @@ const Dashboard: React.FC = () => {
 
         {/* Favorites Section */}
         <div className="bg-white rounded-lg shadow-md !p-6">
-          <h2 className="text-2xl font-semibold text-gray-900 !!mb-6">
+          <h2 className="text-2xl font-semibold text-gray-900 !mb-6">
             Favorites ({favorites.length})
           </h2>
           {favorites.length === 0 ? (
